@@ -1,5 +1,6 @@
 .userscreen {
     margin: 2em;
+    max-width: 314px;
 }
 
 ul {
