@@ -1,0 +1,9 @@
+.chat {
+    height: 400px;
+    background-color: #fff;
+    width: 250px;
+    border-radius: 15px 15px 0px 0px;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+}
