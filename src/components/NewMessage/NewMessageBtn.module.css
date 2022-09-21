@@ -3,11 +3,19 @@
     border-radius: 10px;
     z-index: 1;
     position: relative;
+    background-color: rgb(19, 199, 19);
+    border-color: rgb(19, 199, 19);
 }
 
 .btn svg {
     z-index: 2;
     position: absolute;
-    top: 4px;
-    right: 7px;
+    top: 6px;
+    right: 8px;
+}
+
+.btn:disabled {
+    background-color:transparent;
+    border: 1px solid black;
+    border-color: black;
 }

@@ -3,7 +3,7 @@ import classes from "./NewMessageBtn.module.css";
 
 const NewMessageBtn = (props) => {
   return (
-    <button type="submit" className={classes.btn} onClick={props.onSubmit}>
+    <button type="submit" className={classes.btn} onClick={props.onSubmit} disabled={props.disabled}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="1.5em"

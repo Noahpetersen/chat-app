@@ -12,6 +12,8 @@ const NewMessage = () => {
         setEntereMessage(event.target.value)
     }
 
+    const messageIsValid = enteredMessage.trim() === ''
+
     const formSubmissionHandler = (event) => {
         event.preventDefault();
         setEntereMessage('')
@@ -21,7 +23,7 @@ const NewMessage = () => {
     <form className={classes['new-message']}>
         <NewMessageInput onChange={messageChangeHandler}
         value={enteredMessage}/>
-        <NewMessageBtn onSubmit={formSubmissionHandler}/>
+        <NewMessageBtn onSubmit={formSubmissionHandler} disabled={messageIsValid}/>
     </form>
   )
 }
