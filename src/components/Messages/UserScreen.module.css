@@ -1,6 +1,8 @@
 .userscreen {
     margin: 2em;
     max-width: 314px;
+    box-shadow: 2px 2px 20px black;
+    border-radius: 10px;
 }
 
 ul {
@@ -8,4 +10,28 @@ ul {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    flex-shrink: 0;
+}
+
+.message {
+    display: inline-block;
+    list-style-type: none;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    display: inline-block;
+    padding: 8px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: fit-content;
+}
+
+.test{
+    background-color: green;
+    color: white;
+    list-style-type: none;
+    border-radius: 10px;
+    display: inline-block;
+    padding: 8px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: fit-content;
+    margin-left: auto;
 }
