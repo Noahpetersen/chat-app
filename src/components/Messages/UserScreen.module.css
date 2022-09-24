@@ -13,7 +13,7 @@ ul {
     flex-shrink: 0;
 }
 
-.message {
+.user2 {
     display: inline-block;
     list-style-type: none;
     background-color: whitesmoke;
@@ -24,7 +24,7 @@ ul {
     width: fit-content;
 }
 
-.test{
+.user1{
     background-color: green;
     color: white;
     list-style-type: none;

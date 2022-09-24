@@ -1,31 +1,41 @@
 import React, { useState, useCallback } from "react";
 
-function useHttp() {
+const useHttp = () => {
     const [isLoading, setIsLoading] = useState(false);
-    const [error, setError] = useState(null);
+        const [error, setError] = useState(null);
 
-    setIsLoading(true);
+    const sendRequest = useCallback( async (requestConfig,  applyData) => {
+        
+
+        setIsLoading(true);
         setError(null);
-  try {  
-  const sendRequest = useCallback (async (requestConfig, applyData) => {
-    const response = await fetch(requestConfig.url, {
-      method: requestConfig.method ? requestConfig.method : "GET",
-      headers: requestConfig.headers ? requestConfig.headers : {},
-      body: requestConfig.body ? JSON.stringify(requestConfig.body) : null,
-    });
-  
+        try {
+          const response = await fetch(requestConfig.url, {
+              method: requestConfig.method ? requestConfig.method : 'GET',
+              headers: requestConfig.headers ? requestConfig.headers : {},
+              body: requestConfig.body ? JSON.stringify(requestConfig.body) : null
+          });
+    
+          if (!response.ok) {
+            throw new Error('Request failed!');
+          }
+    
+          const data = await response.json();
+          
+    
+         applyData(data)
 
-  if(!response.ok) {
-      throw new Error ('Failed loading messages')
-  }
+        } catch (err) {
+          setError(err.message || 'Something went wrong!');
+        }
+        setIsLoading(false);
+      },[]);
 
-  const data = await response.json()
-
-  applyData(data)
-}, catch {
-
-} ,[])};
-
-}
+      return {
+          isLoading: isLoading,
+          error: error,
+          sendRequest: sendRequest
+      };
+};
 
 export default useHttp;

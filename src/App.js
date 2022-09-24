@@ -5,8 +5,8 @@ import UserScreen from "./components/Messages/UserScreen";
 function App() {
   return (
     <div className={classes.app}>
-      <UserScreen></UserScreen>
-      <UserScreen></UserScreen>
+      <UserScreen id="user1"></UserScreen>
+      <UserScreen id="user2"></UserScreen>
     </div>
   );
 }
